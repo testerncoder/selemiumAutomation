@@ -3,9 +3,9 @@
 ## Dependencies
 
 - Cucumber
-- junit
-- selenium
-- webdrivermanager
+- Junit
+- Selenium
+- Webdrivermanager
 
 ## Set up
 
