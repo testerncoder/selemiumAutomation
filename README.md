@@ -57,9 +57,9 @@
 
 ## Folder Description
 
-- **_config:_**
-- **_pom:_**
-- **_stepdefs:_**
-- **_resources:_**
-- **_target:_** Test report generation happens in this folder
+- **_config:_** Defining cucumber class runner and cucumber options.
+- **_pom:_** Defining page locators, page actions.
+- **_stepdefs:_** Defining step definitions of the respective feature files.
+- **_resources:_** Defining feature files in gherkin.
+- **_target:_** Test report generation happens in this folder.
 

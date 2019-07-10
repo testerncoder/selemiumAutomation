@@ -21,18 +21,6 @@ import static io.github.bonigarcia.wdm.DriverManagerType.FIREFOX;
 
 public class SharedContext {
 
-    /*
-    to make use of this, include the code below on top of each StepDefs class
-
-    private SharedContext contextSteps;
-    private String withBrowser;// = "chrome";
-
-    // PicoContainer injects class ContextSteps
-    public MyStepDefs(SharedContext contextSteps) {
-        this.contextSteps = contextSteps;
-
-     */
-
     public enum Browser {
         firefox, chrome
     }
@@ -42,20 +30,6 @@ public class SharedContext {
     private final String FIREFOX_DRIVER_VERSION = "0.20.1"; // https://github.com/mozilla/geckodriver/releases
     private final String CHROME_DRIVER_VERSION = "2.40"; // https://sites.google.com/a/chromium.org/chromedriver/downloads
 
-    /*
-    // NB! remember to pass GITHUB_TOKEN for public repos!
-    This is required for WDM lib.
-
-    -DGITHUB_TOKEN=...your_github_token...
-
-    e.g. read GITHUB_TOKEN from 'Jenkins' credentials or env-vars!!!
-        Jenkinsfile should inject env vars when running tests, e.g.
-    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github-token', usernameVariable: 'GITHUB_USERNAME', passwordVariable: 'GITHUB_TOKEN']]) {
-        java ... -DGITHUB_TOKEN=${GITHUB_TOKEN} ...
-    }
-
-
-     */
     private final String GITHUB_TOKEN = System.getProperty("GITHUB_TOKEN", ""); // see known issues on https://github.com/bonigarcia/webdrivermanager
 
     private static final String PROXY_HOST =
@@ -81,11 +55,6 @@ public class SharedContext {
     public void setUp() throws Exception {
 
         if (isLocalEnv()) {
-            // -DisLocal=true -DGITHUB_TOKEN=...
-            // -Dwdm.override=true -Dwdm.targetPath=wdm
-            // -Dwebdriver.gecko.driver=wdm_local/geckodriver
-            // -Dwebdriver.chrome.driver=wdm_local/chromedriver
-
             String driverExt = "";
             if (SystemUtils.IS_OS_WINDOWS) {
                 driverExt += ".exe";
@@ -232,7 +201,7 @@ public class SharedContext {
         try {
             // browserDriver.manage().deleteAllCookies(); // no-need anymore, we are using browsers in private/incognito mode
             browserDriver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
-            browserDriver.manage().window().maximize();
+           // browserDriver.manage().window().maximize();
         } catch (UnhandledAlertException ex) { // see https://stackoverflow.com/a/46444423
             try {
                 System.out.println(SharedContext.class.getSimpleName()+"|" + "UnhandledAlertException: " + ex);

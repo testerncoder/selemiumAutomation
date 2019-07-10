@@ -2,7 +2,6 @@ package seleniumassignment.automation.pom.uielements;
 
 public interface SearchResultPageElements {
 
-    String SEARCH_RESULT = "//h1[@class='page-heading search-result_header']/span[2]";
-    String FIRST_PRODUCT = "//div[@class='codified-product-tile__row--price-button has-price-value']";
-
+    String FIRST_PRODUCT = "(.//section[@class='product-list_grid4 product-list']/article)[1]";
+    String PRODUCT_PRICE_BUTTON = "(.//div[@class='codified-product-tile__row--price-button has-price-value'])[1]";
 }

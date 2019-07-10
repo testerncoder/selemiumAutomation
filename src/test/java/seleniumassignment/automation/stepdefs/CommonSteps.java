@@ -38,9 +38,6 @@ public class CommonSteps implements En {
         Given("^launch a browser and navigate website home page$", () -> {
             userActions.navigateToHomePage();
         });
-//        Then("^URL of the product details page should have \"(_p.*)\" on it$", (String text) -> {
-//            assertThat(userActions.pageUrlContains(text)).isTrue();
-//        });
         When("^I type product name ([^\\\"]*) on the search box$", (String product) -> {
 
             userActions.enterSearchPhrase(product);
@@ -48,25 +45,22 @@ public class CommonSteps implements En {
         When("^I click on search icon or hit enter$", () -> {
             userActions.clickOnSearchBoxIcon();
         });
-
-        Then("^I should be redirected to the next page, title should be \"([^\"]*)\"$",(String expectedTitle) ->  {
-            userActions.pageTitle();
+        Then("^Page URL should have product id at the end$", () -> {
+            assertThat(driver.getCurrentUrl().contains(userActions.getProductId()));
         });
-
-        Then("^URL of the page should have \"([^\"]*)\" on it$", (String text) -> {
-            assertThat(userActions.pageUrlContains(text)).isTrue();
-        });
-
         When("^I click on any product on the page$", () -> {
             userActions.clickFirstProduct();
         });
         When("^I click on Add to Wish List button on the page$", () -> {
             userActions.clickAddToWishListBtn();
         });
+        Then("^I should see the button text is turned as Added$", () -> {
+            assertThat(userActions.verifyButton()).isTrue();
+        });
         When("^I click on Wish List link on the header$", () -> {
             userActions.clickOnWishListLink();
         });
-        Then("^Product should be added in my Wish List$", () -> {
+        Then("^I should see the same product added in my Wish List$", () -> {
             assertThat(userActions.isProductAddedIntoWishList()).isTrue();
         });
         After(new String[]{"@web"}, (Scenario scenario) -> {

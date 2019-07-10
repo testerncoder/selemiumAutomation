@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class AbstractPage {
 
+    // WebDriver initialization and passing driver to abstract class constructor
     private WebDriver driver;
     public AbstractPage(WebDriver driver) {
         this.driver = driver;
@@ -16,14 +17,15 @@ public abstract class AbstractPage {
         return new WebDriverWait(driver, timeoutSeconds);
     }
 
+    // Abstract user actions methods
     public void navigateToHomePage() {}
     public void enterSearchPhrase(String phrase) {}
     public void clickOnSearchBoxIcon(){}
-    public boolean pageTitle() {return true;}
-    public boolean pageUrlContains(String phrase) {return true;}
+    public String getProductId(){return "";}
     public void  clickFirstProduct(){}
     public void clickAddToWishListBtn(){}
     public void clickOnWishListLink(){}
+    public boolean verifyButton(){return true;}
     public boolean isProductAddedIntoWishList(){return true;}
 
 }
