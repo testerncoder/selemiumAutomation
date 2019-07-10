@@ -12,8 +12,8 @@
 - clone repository
   ```
   git clone https://github.com/Nidhisachan/selemiumAutomation.git
-      cd /selemiumAutomation
-      mvn clean install
+  cd /selemiumAutomation
+  mvn clean install
   ```
 - Test result generation on following path: /target/cucumber/index.html
 
