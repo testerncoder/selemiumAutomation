@@ -17,7 +17,6 @@
   ```
 - Test result generation on following path: /target/cucumber/index.html
 
-![image](https://lh3.google.com/u/0/d/1cdSlVZIn_A2d6n8mkvRI4xdcNV7HyxSF=w3048-h1548-iv1)
 
 ## Folder Structure
 
