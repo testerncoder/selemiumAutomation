@@ -21,7 +21,8 @@
 /nbdist/
 /.nb-gradle/
 
-target/
+target
+wdm
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup

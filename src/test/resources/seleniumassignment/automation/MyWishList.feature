@@ -9,7 +9,7 @@
 
 # Defining Positive Scenario to add a product in the Wish List successfully
   @web @chrome
-  Scenario: Add product into your Wish List from search result page
+  Scenario Outline: Add product into your Wish List from search result page
       When I type product name <productname> on the search box
       And I click on search icon or hit enter
       When I click on any product on the page
