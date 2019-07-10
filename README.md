@@ -2,10 +2,10 @@
 
 ## Dependencies
 
-- Cucumber
-- Junit
-- Selenium
-- Webdrivermanager
+- [Cucumber](https://github.com/cucumber/cucumber)
+- [Junit](https://mvnrepository.com/artifact/junit/junit/4.12)
+- [Selenium](https://github.com/SeleniumHQ/selenium)
+- [Webdrivermanager](https://github.com/bonigarcia/webdrivermanager)
 
 ## Set up
 
