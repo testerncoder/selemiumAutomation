@@ -1,4 +1,4 @@
-# Selenium with Cucumber BDD
+# Automate Wishlist with Selenium & Cucumber (BDD)
 
 ## Dependencies
 
@@ -54,3 +54,12 @@
 │                   └── SearchProduct.feature
 └── target
 ```
+
+## Folder Description
+
+- **_config:_**
+- **_pom:_**
+- **_stepdefs:_**
+- **_resources:_**
+- **_target:_** Test report generation happens in this folder
+
