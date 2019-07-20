@@ -16,16 +16,16 @@ public abstract class AbstractPage {
     protected WebDriverWait driverWait(long timeoutSeconds) {
         return new WebDriverWait(driver, timeoutSeconds);
     }
-
     // Abstract user actions methods
+    private String productId;
     public void navigateToHomePage() {}
     public void enterSearchPhrase(String phrase) {}
     public void clickOnSearchBoxIcon(){}
-    public String getProductId(){return "";}
+    public String getProductId(){return productId;}
     public void  clickFirstProduct(){}
     public void clickAddToWishListBtn(){}
     public void clickOnWishListLink(){}
-    public boolean verifyButton(){return true;}
+    public boolean verifyAddedButton(){return true;}
     public boolean isProductAddedIntoWishList(){return true;}
 
 }
